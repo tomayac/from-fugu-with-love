@@ -184,10 +184,11 @@ while still building \textit{with} the web technologies
 \textsc{html}, \textsc{css}, and \textsc{js}.
 This is not without risk from a~security point of view~\cite{carettoni17,luo11},
 and also suboptimal for users who, apart from the application code,
-additionally need to download the wrapper code---for each application separately.
+on top need to download the wrapper code---for each application separately.
 We argue that instead web developers should have access
-to the capabilities they need to create great web experiences,
-and we want to support them as they do by collaborating in the \textit{capabilities project}.
+to the capabilities they need to create great web experiences
+and we want to support them by collaborating in the \textit{capabilities project},
+code-named \textit{project fugu}.
 
 \subsection{The Capabilities Project, Or Project Fugu}
 
@@ -209,8 +210,8 @@ as we iterate on the design to ensure its interoperability.
 The capabilities project is a~truly cross-company effort,
 with contributors from Google, Intel, and Microsoft.
 All monthly meeting notes are publicly
-available\footnote{Project Fugu notes: \url{https://bit.ly/fugu-sync}}
-and the conference calls are open for anyone to join.
+available,\footnote{Project Fugu notes: \url{https://bit.ly/fugu-sync}}
+and the regularly scheduled conference calls are open for anyone to join.
 
 We have identified and prioritized an initial set of capabilities
 we heard partner demand for and that we see as critical to closing the gap
@@ -224,7 +225,7 @@ This analogy works quite well with many of the capabilities we deal with,
 hence the code name \textit{project fugu}.
 We have outlined our vision for a~more capable web in a~blog post~\cite{lepage18}
 on the Chromium blog and invite interested parties to follow along the project's progress
-on the dedicated landing
+on the dedicated project landing
 page.\footnote{Project Fugu landing page: \url{https://developers.google.com/web/updates/capabilities}}
 
 \subsection{The Fugu Process}
@@ -237,12 +238,12 @@ but it is easier to change course early in the process.
 It is worth noting that many ideas never make it past an explainer or origin trial stage.
 \textit{Not} shipping a feature because it does not solve the developer need is fine.
 We want to highlight that this process does \textit{not} replace the Blink launch
-process,\footnote{Blink launch process: \url{https://www.chromium.org/blink/launching-features}}
+process;\footnote{Blink launch process: \url{https://www.chromium.org/blink/launching-features}}
 both go hand in hand together.
 The fugu process, depicted in \autoref{fig:fuguprocess}, consists of the following steps:
 
 \begin{enumerate}  
-  \item Identify the developer need:
+  \item \textbf{Identify the developer need:}
   
   The first step is to identify and understand the developer need.
   What is the developer trying to accomplish?
@@ -250,7 +251,7 @@ The fugu process, depicted in \autoref{fig:fuguprocess}, consists of the followi
   are fixed by this new capability? Typically, these come in as feature request
   from developers, frequently via bugs filed on \url{bugs.chromium.org}.
 
-  \item Create an explainer:
+  \item \textbf{Create an explainer:}
 
   After identifying the need for a new capability, create an explainer,
   essentially a~design document that is meant to explain the problem,
@@ -258,7 +259,7 @@ The fugu process, depicted in \autoref{fig:fuguprocess}, consists of the followi
   The explainer is a living document that will go through heavy iteration
   as the new capability evolves.
 
-  \item Get feedback and iterate on the explainer:
+  \item \textbf{Get feedback and iterate on the explainer:}
 
   Once the explainer has a reasonable level of clarity,
   it is time to publicize it, to solicit feedback, and iterate on the design.
@@ -266,7 +267,7 @@ The fugu process, depicted in \autoref{fig:fuguprocess}, consists of the followi
   and works in a way that they expect. This is also an opportunity to gather
   public support and verify that there really is a need for this capability.
 
-  \item Move the design to a specification and iterate:
+  \item \textbf{Move the design to a specification and iterate:}
   
   Once the explainer is in a good state,
   the design work transitions into a formal specification,
@@ -279,7 +280,7 @@ The fugu process, depicted in \autoref{fig:fuguprocess}, consists of the followi
   This real world feedback helps shape and validate the design,
   ensuring we get it right, before it becomes a~standard.
 
-  \item Ship it:
+  \item \textbf{Ship it:}
 
   Finally, once the origin trial is complete, the spec has been finalized,
   and all of the other launch steps have been completed, it is time to ship it to stable.  
@@ -349,7 +350,7 @@ to evaluating how powerful new features should be controlled on the web:
 
 This is not the first attempt at making the web a~powerful application platform.
 Below, we list three platforms that went to market with this promise.
-While there are more, these three can serve as representative examples of the genre.
+While there are more, these three can serve as representative examples of the field.
 
 \subsection{Chrome Apps}
 
@@ -367,9 +368,9 @@ Chrome Apps could use a~set of proprietary \texttt{chrome.*}
 \textsc{api}s.\footnote{\texttt{chrome.*}
 \textsc{api}s: \url{https://developer.chrome.com/apps/api_index}}
 After three years, Chrome Apps were deprecated in August
-2013\footnote{Chrome Apps Deprecation: \url{https://blog.chromium.org/2016/08/from-chrome-apps-to-web.html}}
+2013\footnote{Chrome Apps deprecation update note: \url{https://blog.chromium.org/2016/08/from-chrome-apps-to-web.html}}
 The capabilities project is a~direct successor to Chrome Apps,
-in fact, Progressive Web Apps built using Fugu \textsc{api}s
+in fact, Progressive Web Apps built using fugu \textsc{api}s
 are one of the recommended migration
 strategies.\footnote{Transitioning from Chrome Apps: \url{https://developers.chrome.com/apps/migration}}
 
@@ -383,8 +384,8 @@ wherever they were, wirelessly, as opposed to being bound to a personal computer
 At its core, web\textsc{os} leverages industry-standard technologies,
 including web technologies such as \textsc{css}, \textsc{xhtml}, and \textsc{js}.
 It changed owners several times and lives on as an open-source
-project\footnote{web\textsc{os} open-psource project: \url{https://www.webosose.org/}}
-powering smart devices.
+project\footnote{web\textsc{os} open-source project: \url{https://www.webosose.org/}}
+powering smart devices, \textit{e.g.},\ \textsc{tv}s.
 
 \subsection{Firefox \textsc{os}}
 
@@ -399,7 +400,7 @@ The operating system was capable of running web applications directly
 or those installed from an application marketplace.
 The applications used standards like JavaScript and \textsc{html}5,
 and web \textsc{api}s that could communicate directly with the underlying hardware.
-A~fork of Firefox \textsc{os} gains traction under the name of
+A~fork of Firefox \textsc{os} now gains traction under the name of
 Kai\textsc{os},\footnote{Kai\textsc{os}: \url{https://www.kaiostech.com/}}
 especially on feature phones in emerging markets.
 
@@ -423,8 +424,9 @@ but delivers a truly stunning experience on browsers that support capabilities
 like native file system access, system clipboard access, contacts retrieval,
 periodic background sync, screen wake lock, sharing features, and many more.
 
-The target audience are web developers, browser engineers,
-and people involved in the \textsc{w3c} standards process.
+The target audience are academia and industry web developers, browser engineers,
+and people involved in the \textsc{w3c} standards process,
+as well as web privacy researchers.
 
 \subsection{Baseline Application}
 
@@ -437,18 +439,19 @@ that serves as the baseline greeting card app that is offline-enabled,
 can be added to the user's home screen, \textit{etc.},
 and step-by-step add new browser capabilities
 as progressive enhancements that are dynamically offered on supporting browsers.
-We note that the design of this application is by no means final.
+We note that the currently rudimentary visual design of this application is \textit{not} focus of the demo.
 
-\subsection{Web Share \textsc{api} Support}
+\subsection{Web Share (Target) \textsc{api} Support}
 
 Creating the most amazing greeting cards is boring if there is no one out to appreciate them.
 We thus add a~feature that allows the user to share their drawings with the world.
-The Web Share \textsc{api}~\cite{giuca2017webshare} allows for sharing of files
+The Web Share \textsc{api}~\cite{giuca2017webshare} allows for the sharing of files
 using the native device's share mechanism.
 \autoref{fig:share} shows the user initiating a~share of a drawing on an Android device.
 Both the native Google Hangouts app as well as the native Facebook app offer itself
 as share targets.
-Through the Web Share target \textsc{api}, the greeting card app itself can become a~share target
+The other way round, through the Web Share Target \textsc{api},
+the greeting card application itself can become a~share target
 that one can share images to, for example, from the native photo gallery app.
 
 \begin{figure}[hbt]
@@ -463,7 +466,7 @@ Drawing everything from scratch is hard.
 We thus add a~feature that allows the user to import a local image into the application.
 \autoref{fig:file} shows the file import dialog where, after granting access,
 the user can open a local image file and add it to their drawing.
-Later, they can also save their creation top disk.
+Later, they can also save their creation to disk.
 Both operations are enabled through the Native File System Access \textsc{api}~\cite{kruisselbrink19}
 and not to be confused with legacy workarounds that required uploading a local file to a server
 and downloading a~copy.
@@ -498,9 +501,10 @@ If the greeting cards app is installed on a~user's device,
 it will have an icon on their home screen.
 This icon can be used to convey fun information on the icon badge
 like the number of brushstrokes a~given drawing has taken.
-The Badging \textsc{api}~\cite{giuca19} enables apps to set a~numeric badge on the app icon.
+The Badging \textsc{api}~\cite{giuca19} enables apps to set a~numeric badge on the app icon
+that increments with each stroke.
 
-\subsection{Further \textsc{api}s Support}
+\subsection{Other \textsc{api}s Support}
 
 The demo will showcase a number of other \textsc{api}s, namely the
 Shape Detection \textsc{api} to detect shapes like faces,
@@ -520,7 +524,7 @@ with the app directly via the operating system's file explorer.
 We hope to gather feedback on these proposed features from the conference attendees,
 as well as trigger conversations about future challenges around
 permissions, security, and browser compatibility,
-and invite interested parties to learn more about Project Fugu.
+and invite interested parties to learn more about project fugu.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{fugu}
@@ -538,7 +542,7 @@ or Edge
 Canary\footnote{Edge Canary: \url{https://www.microsoftedgeinsider.com/en-us/download}}
 browsers.
 Since this demo is about bleeding edge web \textsc{api}s,
-some browser runtime flags need to be set (replace \texttt{chrome://}
+some browser runtime flags need to be set (below, replace \texttt{chrome://}
 with \texttt{edge://} on Edge):
 
 \begin{itemize}
