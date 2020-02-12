@@ -1,129 +1,86 @@
-%%
-%% This is file `sample-sigconf.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% samples.dtx  (with options: `sigconf')
-%% 
-%% IMPORTANT NOTICE:
-%% 
-%% For the copyright see the source file.
-%% 
-%% Any modified versions of this file must be renamed
-%% with new filenames distinct from sample-sigconf.tex.
-%% 
-%% For distribution of the original source see the terms
-%% for copying and modification in the file samples.dtx.
-%% 
-%% This generated file may be distributed as long as the
-%% original source files, as listed above, are part of the
-%% same distribution. (The sources need not necessarily be
-%% in the same archive or directory.)
-%%
-%% The first command in your LaTeX source must be the \documentclass command.
-
-% \documentclass[sigconf]{acmart}
-\documentclass[sigconf, anonymous]{acmart}
+\documentclass[sigconf]{acmart}
 \usepackage[utf8]{inputenc}
-
-%%
-%% \BibTeX command to typeset BibTeX logo in the docs
-\AtBeginDocument{%
-  \providecommand\BibTeX{{%
-    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
-
-%% Rights management information.  This information is sent to you
-%% when you complete the rights form.  These commands have SAMPLE
-%% values in them; it is your responsibility as an author to replace
-%% the commands and values with those provided to you when you
-%% complete the rights form.
-\setcopyright{acmcopyright}
 \copyrightyear{2020}
 \acmYear{2020}
-\acmDOI{10.1145/1122445.1122456}
+\setcopyright{iw3c2w3}
+\acmConference[WWW '20 Companion]{Companion Proceedings of the Web Conference 2020}{April 20--24, 2020}{Taipei, Taiwan}
+\acmBooktitle{Companion Proceedings of the Web Conference 2020 (WWW '20 Companion), April 20--24, 2020, Taipei, Taiwan}
+\acmPrice{}
+\acmDOI{10.1145/XXXXXX.XXXXXX}
+% Authors, replace the red X's with your assigned DOI string during the rightsreview eform process.
+\acmISBN{978-1-4503-7024-0/20/04}
 
-%% These commands are for a PROCEEDINGS abstract or paper.
-\acmConference[Woodstock '18]{Woodstock '18: ACM Symposium on Neural
-  Gaze Detection}{June 03--05, 2018}{Woodstock, NY}
-\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
-  June 03--05, 2018, Woodstock, NY}
-\acmPrice{15.00}
-\acmISBN{978-1-4503-XXXX-X/18/06}
-
-
-%%
-%% Submission ID.
-%% Use this when submitting an article to a sponsored event. You'll
-%% receive a unique submission ID from the organizers
-%% of the event, and this ID should be used as the parameter to this command.
-%%\acmSubmissionID{123-A56-BU3}
-
-%%
-%% The majority of ACM publications use numbered citations and
-%% references.  The command \citestyle{authoryear} switches to the
-%% "author year" style.
-%%
-%% If you are preparing content for an event
-%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
-%% citations and references.
-%% Uncommenting
-%% the next command will enable that style.
-%%\citestyle{acmauthoryear}
-
-%%
-%% end of the preamble, start of the body of the document source.
+\settopmatter{printacmref=true}
 \begin{document}
 
-%%
-%% The "title" command has an optional parameter,
-%% allowing the author to define a "short title" to be used in page headers.
 \title{From Fugu With Love: New Capabilities for the Web}
 
-%%
-%% The "author" command and its associated commands are used to define
-%% the authors and their affiliations.
-%% Of note is the shared affiliation of the first two authors, and the
-%% "authornote" and "authornotemark" commands
-%% used to denote shared contribution to the research.
 \author{Thomas Steiner}
-\author{Pete LePage}
-\author{Thomas Nattestad}
-\author{Alex Russell}
-\author{Dominick Ng}
-\author{Rory McClelland}
 \email{tomac@google.com}
-\affiliation{
-  \institution{Google LLC}
-  \streetaddress{1600 Amphitheatre Parkway}
-  \city{Mountain View}
-  \state{CA 94043}
+\affiliation{%
+  \institution{Google Germany GmbH}
+  \streetaddress{ABC-Str. 19}
+  \city{Hamburg}
+  \postcode{20354}
+  \country{Germany}
 }
 
-%%
-%% By default, the full list of authors will be used in the page
-%% headers. Often, this list is too long, and will overlap
-%% other information printed in the page headers. This command allows
-%% the author to define a more concise list
-%% of authors' names for this purpose.
-% \renewcommand{\shortauthors}{Trovato and Tobin, et al.}
+\author{Pete LePage}
+\email{petele@google.com}
+\affiliation{%
+  \institution{Google LLC}
+  \streetaddress{111 8th Avenue}
+  \city{New York}
+  \state{NY}
+  \postcode{10011}
+  \country{United States}
+}
 
-%%
-%% The abstract is a short summary of the work to be presented in the
-%% article.
+\author{Thomas Nattestad}
+\email{nattestad@google.com}
+\author{Rory McClelland}
+\email{rorymcclelland@google.com}
+\affiliation{%
+  \institution{Google Germany GmbH}
+  \streetaddress{Erika-Mann-Str. 33}
+  \city{Munich}
+  \postcode{80636}
+  \country{Germany}
+}
+
+\author{Alex Russell}
+\email{slightlyoff@google.com}
+\affiliation{%
+  \institution{Google LLC}
+  \streetaddress{345 Spear Street}
+  \city{San Francisco}
+  \state{CA}
+  \postcode{94105}
+  \country{United States}
+}
+
+\author{Dominick Ng}
+\email{dominickn@google.com}
+\affiliation{%
+  \institution{Google Australia}
+  \streetaddress{48 Pirrama Road}
+  \city{Sydney}
+  \state{NSW}
+  \postcode{2009}
+  \country{Australia}
+}
+
+\renewcommand{\shortauthors}{Thomas Steiner, Pete LePage, Thomas Nattestad, \textit{et al.}}
+
 \begin{abstract}
 With this demo, we will show at the example of a greeting card web application
 how new and upcoming browser capabilities can progressively enhance
 this application so that it remains useful on all modern browsers,
-but delivers a truly stunning experience on browsers that support new web capabilities
+but delivers an advanced experience on browsers that support new web capabilities
 like native file system access, system clipboard access, contacts retrieval,
-periodic background sync, screen wake lock, sharing features, and many more.
+periodic background sync, screen wake lock, web sharing features, and many more.
 \end{abstract}
 
-%%
-%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
-%% Please copy and paste the code instead of the example below.
-%%
 \begin{CCSXML}
 <ccs2012>
 <concept>
@@ -142,14 +99,8 @@ periodic background sync, screen wake lock, sharing features, and many more.
 \ccsdesc[500]{Information systems~Web applications}
 \ccsdesc[500]{Information systems~Browsers}
 
-%%
-%% Keywords. The author(s) should pick words that accurately describe
-%% the work being presented. Separate the keywords with commas.
 \keywords{Progressive Web Apps, Web \textsc{api}s, Web Incubator Community Group}
 
-%%
-%% This command processes the author and affiliation and title
-%% information and builds the first part of the formatted document.
 \maketitle
 
 \section{Introduction and Background}
@@ -159,7 +110,7 @@ periodic background sync, screen wake lock, sharing features, and many more.
 Modern web browsers provide a solid foundation of capabilities
 that allow for the creation of impressive web applications.
 Those capabilities have enabled new experiences on the web
-that were never thought possible on what initially started as
+that were never thought possible in what initially started as
 a~global information space of linked documents.
 WebAssembly (Wasm) is enabling new classes of games and productivity apps,
 Web Real-Time Communication (Web\textsc{rtc}) enables new ways to communicate,
@@ -187,17 +138,17 @@ and also suboptimal for users who, apart from the application code,
 on top need to download the wrapper code---for each application separately.
 We argue that instead web developers should have access
 to the capabilities they need to create great web experiences
-and we want to support them by collaborating in the \textit{capabilities project},
-code-named \textit{project fugu}.
+and we want to support them by collaborating in the \textit{Capabilities Project},
+code-named \textit{Project Fugu}.
 
 \subsection{The Capabilities Project, Or Project Fugu}
 
-In the context of the capabilities project, we want to enable web apps
+In the context of the Capabilities Project, we want to enable web apps
 to do anything native apps can, by exposing the capabilities of native platforms
 to the web platform, while maintaining user security, privacy, trust,
 and other core tenets of the web.
 Giving developers these new tools will empower the open web
-as a place where any experience can be created,
+as a place where almost any experience can be created,
 and make it a~first class platform for developing apps that run on any browser,
 with any operating system, and on any device.
 We design and develop these new capabilities in an open and transparent way
@@ -205,48 +156,45 @@ in the \textsc{w3c}'s Web Incubator Community
 Group\footnote{\textsc{wicg}: \url{https://wicg.io/}} (\textsc{wicg})
 using the existing open web platform standards processes
 while getting early feedback from developers and other browser vendors
-as we iterate on the design to ensure its interoperability.
+as we iterate on the design of these features to ensure its interoperability.
 
-The capabilities project is a~truly cross-company effort,
+The Capabilities Project is a~truly cross-company effort,
 with contributors from Google, Intel, and Microsoft.
-All monthly meeting notes are publicly
-available,\footnote{Project Fugu notes: \url{https://bit.ly/fugu-sync}}
-and the regularly scheduled conference calls are open for anyone to join.
+All monthly meeting notes are publicly accessible to anyone in the Chromium
+organization,\footnote{Project Fugu notes: \url{https://bit.ly/fugu-sync}}
+and the regularly scheduled conference calls are open for anyone to join upon invitation.
 
 We have identified and prioritized an initial set of capabilities
 we heard partner demand for and that we see as critical to closing the gap
-between web and native, and have already started work on a handful of them.
+between web and native.
 People interested in the list can review it by searching the Chromium bug database
 for bugs that are tagged with the label
 \texttt{proj-fugu}.\footnote{Project Fugu bugs: \url{https://bit.ly/fugu-bugs}}
-Fugu is a pufferfish that is considered a delicacy, however,  
-if not carefully prepared, can be lethally poisonous. 
-This analogy works quite well with many of the capabilities we deal with,
-hence the code name \textit{project fugu}.
+Regarding the project's code name: fugu is a pufferfish that is considered a delicacy, however,  
+if not carefully prepared, it can be lethally poisonous. 
+This analogy works quite well with many of the capabilities we deal with.
 We have outlined our vision for a~more capable web in a~blog post~\cite{lepage18}
 on the Chromium blog and invite interested parties to follow along the project's progress
 on the dedicated project landing
-page.\footnote{Project Fugu landing page: \url{https://developers.google.com/web/updates/capabilities}}
+page.\footnote{Project Fugu landing page:
+\url{https://developers.google.com/web/updates/capabilities}}
 
-\subsection{The Fugu Process}
+\subsection{The Capabilities Process}
 
 We have developed a process to make it possible to design and develop
 new web platform capabilities that meet the needs of developers quickly,
 in the open, and most importantly, work within the existing standards process.
-Developer feedback is critical to help us ensure we are shipping the right features,
-but it is easier to change course early in the process.
 It is worth noting that many ideas never make it past an explainer or origin trial stage.
 \textit{Not} shipping a feature because it does not solve the developer need is fine.
 We want to highlight that this process does \textit{not} replace the Blink launch
 process;\footnote{Blink launch process: \url{https://www.chromium.org/blink/launching-features}}
 both go hand in hand together.
-The fugu process, depicted in \autoref{fig:fuguprocess}, consists of the following steps:
+The capabilities process, depicted in \autoref{fig:fuguprocess}, consists of the following steps:
 
 \begin{enumerate}  
   \item \textbf{Identify the developer need:}
   
   The first step is to identify and understand the developer need.
-  What is the developer trying to accomplish?
   How are they doing it today? And what and whose problems or frustrations
   are fixed by this new capability? Typically, these come in as feature request
   from developers, frequently via bugs filed on \url{bugs.chromium.org}.
@@ -264,21 +212,19 @@ The fugu process, depicted in \autoref{fig:fuguprocess}, consists of the followi
   Once the explainer has a reasonable level of clarity,
   it is time to publicize it, to solicit feedback, and iterate on the design.
   This is an opportunity to verify the new capability meets the needs of developers
-  and works in a way that they expect. This is also an opportunity to gather
-  public support and verify that there really is a need for this capability.
+  and works as expected and to gather public support and verify
+  that there really is a need for this.
 
   \item \textbf{Move the design to a specification and iterate:}
   
   Once the explainer is in a good state,
   the design work transitions into a formal specification,
   working with developers and other browser vendors to iterate and improve on the design.
-  Then, once the design starts to stabilize, we typically use an
+  Once the design starts to stabilize, we typically use an
   origin trial\footnote{Origin Trial: \url{http://googlechrome.github.io/OriginTrials/explainer.html}}
   to experiment with the implementation.
   Origin trials allow developers to try new features with real users,
   and give feedback on the implementation.
-  This real world feedback helps shape and validate the design,
-  ensuring we get it right, before it becomes a~standard.
 
   \item \textbf{Ship it:}
 
@@ -298,17 +244,18 @@ The fugu process, depicted in \autoref{fig:fuguprocess}, consists of the followi
 Some of the capabilities we work on are potentially harmful for users
 if not handled appropriately (we recall the code name of this project).
 In a~position paper~\cite{russell18} presented at the \textsc{w3c} Permissions Workshop,
-we have thus outlined our standpoints regarding evolving the current permission model.
-Briefly, we propose the following steps to be taken:
+we have outlined our standpoints regarding evolving the current permission model.
+We propose the following steps:
 
 \begin{itemize}
   \item Permission-requesting \textsc{api}s need to introduce the ability for
     developers to register interest in a~capability before ever being allowed to prompt users
-    and to be called back when the situation changes in their favor.
+    and to be called back when the situation changes, \textit{e.g.},\
+    if increased site engagement is noted, when before the threshold would not have been reached.
   \item Since different web \textsc{api}s currently have disparate ways to signal
     a~developer's intent to use them, permissions requests should be centralized
-    on a~single method~\cite{yasskin17} to enable the introduction
-    of better user controls and bring much needed developer consistency.
+    on a~single method~\cite{yasskin17} to enable
+    better user controls and bring much needed developer consistency.
   \item The Permissions \textsc{api}~\cite{lamouri19} should be extended with a revoke method,
     so developers are able to ensure their applications operate with least-privilege.
   \item The Web Application Manifest should be extended to include fields
@@ -326,9 +273,8 @@ The following general principles~\cite{ng19} summarize the overall approach of t
 to evaluating how powerful new features should be controlled on the web:
 
 \begin{itemize}
-  \item Access to powerful APIs should be available to the entire web platform of secure contexts,
-    with control managed exclusively by choosers, prompts,
-    or other user consent \textsc{ux} at time-of-use.
+  \item Access to powerful APIs should be available to the entire web of secure contexts,
+    with control managed exclusively by user consent \textsc{ux} like prompts or pickers at time-of-use.
   \item \textsc{api}-specific restrictions on the scope of access may also be used
     to guard against potential abuse.
   \item Usage of powerful \textsc{api}s should be clearly disclosed to users,
@@ -349,8 +295,8 @@ to evaluating how powerful new features should be controlled on the web:
 \section{Prior Art}
 
 This is not the first attempt at making the web a~powerful application platform.
-Below, we list three platforms that went to market with this promise.
-While there are more, these three can serve as representative examples of the field.
+We list three examples that went to market with this promise.
+While there are more, these three are very representative.
 
 \subsection{Chrome Apps}
 
@@ -359,25 +305,25 @@ and flexibility of the modern web with the powerful functionality
 previously only available with software installed on devices. 
 Chrome Apps were designed to work offline, were capable of running in stand-alone windows,
 could be launched directly from the desktop,
-could connect to the cloud, supported desktop notifications,
+supported desktop notifications,
 and could interact with \textsc{usb}, Bluetooth and other devices connected to a~desktop,
 including digital cameras.
-They were kept updated automatically and synced the state of apps
-to all desktop devices the user signed in to.
+They were kept updated automatically and synced their state to the cloud.
 Chrome Apps could use a~set of proprietary \texttt{chrome.*}
 \textsc{api}s.\footnote{\texttt{chrome.*}
 \textsc{api}s: \url{https://developer.chrome.com/apps/api_index}}
 After three years, Chrome Apps were deprecated in August
-2013\footnote{Chrome Apps deprecation update note: \url{https://blog.chromium.org/2016/08/from-chrome-apps-to-web.html}}
-The capabilities project is a~direct successor to Chrome Apps,
-in fact, Progressive Web Apps built using fugu \textsc{api}s
+2016.\footnote{Chrome Apps deprecation:
+\url{http://bit.ly/chrome-apps-deprecation}}
+The Capabilities Project is a~direct successor to Chrome Apps.
+In fact, Progressive Web Apps built using Fugu \textsc{api}s
 are one of the recommended migration
 strategies.\footnote{Transitioning from Chrome Apps: \url{https://developers.chrome.com/apps/migration}}
 
 \subsection{Palm web\textsc{os}}
 
 Palm web\textsc{os}\footnote{Palm web\textsc{os} announcement:
-\url{https://web.archive.org/web/20090117111808/http://investor.palm.com/releasedetail.cfm?ReleaseID=358392}}
+\url{http://bit.ly/palm-webos-announcement}}
 was invented exclusively for mobile use.
 It recognized that users wanted their people, calendars, and information to move with them,
 wherever they were, wirelessly, as opposed to being bound to a personal computer.
@@ -390,15 +336,15 @@ powering smart devices, \textit{e.g.},\ \textsc{tv}s.
 \subsection{Firefox \textsc{os}}
 
 Firefox \textsc{os}, also known as
-Boot~2~Gecko,\footnote{Boot 2 Gecko: \url{https://developer.mozilla.org/en-US/docs/Archive/B2G_OS}}
-first commercially released in 2013,
+Boot~2~Gecko\footnote{Boot to Gecko: \url{https://developer.mozilla.org/en-US/docs/Archive/B2G_OS}}
+and first commercially released in 2013,
 is a~discontinued open-source operating system
 designed by Mozilla and external contributors.
 It was based on the rendering engine of the Firefox web browser, Gecko,
 and on the Linux kernel.
 The operating system was capable of running web applications directly
-or those installed from an application marketplace.
-The applications used standards like JavaScript and \textsc{html}5,
+or those installed from an app marketplace.
+The applications used standards like \textsc{js} and \textsc{html}5,
 and web \textsc{api}s that could communicate directly with the underlying hardware.
 A~fork of Firefox \textsc{os} now gains traction under the name of
 Kai\textsc{os},\footnote{Kai\textsc{os}: \url{https://www.kaiostech.com/}}
@@ -420,7 +366,7 @@ progressive enhancement in 2020 is about using modern browser capabilities.
 With this demo, we will show at the example of a greeting card web application
 how new and upcoming browser capabilities can progressively enhance
 this application so that it remains useful on all modern browsers,
-but delivers a truly stunning experience on browsers that support capabilities
+but delivers an advanced experience on browsers that support capabilities
 like native file system access, system clipboard access, contacts retrieval,
 periodic background sync, screen wake lock, sharing features, and many more.
 
@@ -443,7 +389,7 @@ We note that the currently rudimentary visual design of this application is \tex
 
 \subsection{Web Share (Target) \textsc{api} Support}
 
-Creating the most amazing greeting cards is boring if there is no one out to appreciate them.
+Creating an advanced greeting cards app is nonsensical if there is no one out to appreciate the cards.
 We thus add a~feature that allows the user to share their drawings with the world.
 The Web Share \textsc{api}~\cite{giuca2017webshare} allows for the sharing of files
 using the native device's share mechanism.
@@ -452,7 +398,7 @@ Both the native Google Hangouts app as well as the native Facebook app offer its
 as share targets.
 The other way round, through the Web Share Target \textsc{api},
 the greeting card application itself can become a~share target
-that one can share images to, for example, from the native photo gallery app.
+that one can share images to as card sources, for example, from the photo gallery app.
 
 \begin{figure}[hbt]
   \includegraphics[width=0.3\columnwidth]{share.png}
@@ -484,8 +430,9 @@ for example, when it is written in a~different script
 that the present keyboard layout does not support.
 We add a~feature that allows users to pick one (or multiple) of their local contacts
 and add their names to the greeting card message.
-This is a~one-off operation facilitated by the Contact Picker \textsc{api}~\cite{beverloo19},
-no continuous access to the contacts is granted.
+This is a~one-off operation facilitated by the Contact Picker \textsc{api}~\cite{beverloo19};
+no continuous contacts access is granted
+and the user can choose the contact details.
 
 \subsection{Clipboard \textsc{api} Support}
 
@@ -524,7 +471,7 @@ with the app directly via the operating system's file explorer.
 We hope to gather feedback on these proposed features from the conference attendees,
 as well as trigger conversations about future challenges around
 permissions, security, and browser compatibility,
-and invite interested parties to learn more about project fugu.
+and invite interested parties to learn more about Project Fugu.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{fugu}
