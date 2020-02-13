@@ -73,12 +73,10 @@
 \renewcommand{\shortauthors}{Thomas Steiner, Pete LePage, Thomas Nattestad, \textit{et al.}}
 
 \begin{abstract}
-With this demo, we will show at the example of a greeting card web application
-how new and upcoming browser capabilities can progressively enhance
-this application so that it remains useful on all modern browsers,
-but delivers an advanced experience on browsers that support new web capabilities
-like native file system access, system clipboard access, contacts retrieval,
-periodic background sync, screen wake lock, web sharing features, and many more.
+We present a greeting card web application that is useful in all modern browsers,
+but sees its experience progressively enhanced through new and upcoming browser capabilities
+such as native file system access, system clipboard access, contacts retrieval,
+periodic background sync, screen wake lock, web sharing features, and more.
 \end{abstract}
 
 \begin{CCSXML}
@@ -107,18 +105,15 @@ periodic background sync, screen wake lock, web sharing features, and many more.
 
 \subsection{The App Gap}
 
-Modern web browsers provide a solid foundation of capabilities
-that allow for the creation of impressive web applications.
-Those capabilities have enabled new experiences on the web
-that were never thought possible in what initially started as
-a~global information space of linked documents.
+Modern web browsers support impressive web applications far beyond
+the web's origin as a global space of linked documents.
 WebAssembly (Wasm) is enabling new classes of games and productivity apps,
 Web Real-Time Communication (Web\textsc{rtc}) enables new ways to communicate,
 and service workers allow developers to create reliably fast web experiences
 almost regardless of network conditions.
 However, there are some capabilities, like file system access,
 raw clipboard access, background app refresh, and more,
-that are available to native platforms like Android or i\textsc{OS},
+that are available to native desktop and mobile platforms,
 but that are not available to the web platform.
 These missing capabilities mean some types of apps cannot be delivered on the web,
 or that these apps are less useful.
@@ -126,28 +121,25 @@ In colloquial terms, this is sometimes referred to as the \textit{app gap}.
 
 \subsection{Using Web Technologies, But Not the Web}
 
-To cope, some developers only build native apps---that is,
-do not build for the web in the first place.
-Alternatively, they use wrappers like Apache Cordova\footnote{Apache Cordova:
-\url{https://cordova.apache.org/}}
-on mobile or Electron\footnote{Electron: \url{https://electronjs.org/}} on desktop
-to access the underlying capabilities of the device,
-while still building \textit{with} the web technologies
-\textsc{html}, \textsc{css}, and \textsc{js}.
-This is not without risk from a~security point of view~\cite{carettoni17,luo11}.
-Users also pay more in download size and disk space,
-as runtimes must be distributed with application code in this model.
-We argue, instead, that web developers should have access
-to the capabilities they need to create great web experiences
-and we want to support them by collaborating in the \textit{Capabilities Project},
-code-named \textit{Project Fugu}.
+The app gap causes some developers to simply not build for the web.
+However, doing this often means focusing on only one platform,
+or using more complex toolchains.
+Frameworks such as Apache Cordova\footnote{Apache Cordova:
+\url{https://cordova.apache.org/}} (mobile)
+and Electron\footnote{Electron: \url{https://electronjs.org/}} (desktop)
+allow developers to build apps \textit{using} web technologies,
+but also to access more of the underlying capabilities of the device
+than are available on the broader web platform.
+This approach leverages the web's interoperability and relative ease of development,
+but it comes with security challenges~\cite{carettoni17,luo11},
+and requires that users pay the cost of downloading and storing an entire web runtime per app.
 
 \subsection{The Capabilities Project, Or Project Fugu}
 
-In the context of the Project Fugu, we want to enable web apps
-to do anything native apps can, by exposing the capabilities of native platforms
-to the web platform, while maintaining user security, privacy, trust,
-and other core tenets of the web.
+The Capabilities Project (or Project Fugu) aims to bridge this gap.
+We want to enable the web to access native app capabilities
+\textit{without} having to compromise user security, privacy, or trust,
+or having to package entire app runtimes.
 Giving developers these new tools will empower the open web
 as a place where almost any experience can be created,
 and make it a~first class platform for developing apps that run on any browser,
@@ -159,11 +151,11 @@ using the existing open web platform standards processes
 while getting early feedback from developers and other browser vendors
 as we iterate on the design of these features to ensure its interoperability.
 
-Project Fugu is a~truly cross-company effort,
-with contributors from Google, Intel, and Microsoft.
-All monthly meeting notes are publicly accessible to anyone in the Chromium
-organization,\footnote{Project Fugu notes: \url{https://bit.ly/fugu-sync}}
-and the regularly scheduled conference calls are open for anyone to join upon invitation.
+This work is a~cross-company effort, with contributors from Google, Microsoft, and Intel.
+The monthly meetings are open to join upon invitation
+and have shared notes,\footnote{Project Fugu notes:
+\url{https://bit.ly/fugu-sync}}
+accessible to anyone in the Chromium organization.
 
 We have identified and prioritized an initial set of capabilities
 we heard partner demand for and that we see as critical to closing the gap
@@ -187,7 +179,7 @@ new web platform capabilities that meet the needs of developers quickly,
 in the open, and most importantly, without moving feature development outside the standards process.
 The capabilities process, depicted in \autoref{fig:fuguprocess}, consists of the following steps:
 
-\begin{enumerate}  
+\begin{enumerate}
   \item \textbf{Identify the developer need:}
   
   The first step is to identify and understand the developer need.
@@ -228,17 +220,18 @@ The capabilities process, depicted in \autoref{fig:fuguprocess}, consists of the
   and all of the other launch steps have been completed, it is time to ship it to stable.  
 \end{enumerate}
 
-\begin{figure}[hbt]
-  \includegraphics[trim={0 0.5cm 0 0},clip,width=0.925\columnwidth]{capabilities-process.jpg}
-  \caption{The Capabilities Process}
-  \label{fig:fuguprocess}
-\end{figure}
-
 It is worth noting that many ideas never make it past an explainer or origin trial stage.
 \textit{Not} shipping a feature because it does not solve the developer need is fine.
 We want to highlight that this process does \textit{not} replace the Blink launch
 process;\footnote{Blink launch process: \url{https://www.chromium.org/blink/launching-features}}
 both go hand in hand.
+
+\begin{figure}[htb]
+  \includegraphics[trim={0 0.5cm 0 0},clip,width=0.925\columnwidth]{capabilities-process.jpg}
+  \caption{The Capabilities Process}
+  \label{fig:fuguprocess}
+  \vspace{-0.65em}
+\end{figure}
 
 \subsection{Permissions}
 
@@ -321,6 +314,8 @@ Project Fugu is a~direct successor to Chrome Apps.
 In fact, Progressive Web Apps built using Fugu \textsc{api}s
 are one of the recommended migration
 strategies.\footnote{Transitioning from Chrome Apps: \url{https://developers.chrome.com/apps/migration}}
+Support for Chrome Apps in Chrome will end by June 2022.\footnote{Chrome Apps end of support:
+\url{https://goo.gle/chrome-apps-support-end}}
 
 \subsection{Palm web\textsc{OS}}
 
@@ -362,15 +357,12 @@ a~strategy for web design that emphasizes core webpage content first,
 and that then progressively adds more nuanced and technically rigorous layers
 of presentation and features on top of the content.
 While in 2003, progressive enhancement was about using at the time modern \textsc{css} features,
-unobtrusive JavaScript, and even Scalable Vector Graphics,
-progressive enhancement in 2020 is about using modern browser capabilities.
+unobtrusive JavaScript, progressive enhancement in 2020 is about using modern browser capabilities.
 
-We will show at the example of a greeting card demo web application
-how new and upcoming browser capabilities can progressively enhance
-this application so that it remains useful on all modern browsers,
-but delivers an advanced experience on browsers that support capabilities
-like native file system access, system clipboard access, contacts retrieval,
-periodic background sync, screen wake lock, sharing features, and many more.
+We will present a~greeting card web application that is useful in all modern browsers,
+but sees its experience progressively enhanced through new and upcoming browser capabilities
+such as native file system access, system clipboard access, contacts retrieval,
+periodic background sync, screen wake lock, web sharing features, and more.
 
 The target audience are academia and industry web developers, browser engineers,
 and people involved in the \textsc{w3c} standards process,
@@ -409,6 +401,23 @@ and step-by-step add new browser capabilities
 as progressive enhancements that are dynamically offered on supporting browsers.
 We note that the currently rudimentary visual design of this application is \textit{not} focus of the demo.
 
+\subsection{Native File System \textsc{api} Support}
+
+Drawing everything from scratch is hard.
+We thus add a~feature that allows the user to import a local image into the application.
+\autoref{fig:file} shows the file import dialog where, after granting access,
+the user can open a local image file and add it to their drawing.
+Later, they can also save their creation to disk.
+Both operations are enabled through the Native File System Access \textsc{api}~\cite{kruisselbrink19}
+and not to be confused with legacy workarounds that required uploading a local file to a server
+and downloading a~copy.
+
+\begin{figure}[b]
+  \includegraphics[width=0.75\columnwidth]{file.png}
+  \caption{Native File System Access \textsc{api}}
+  \label{fig:file}
+\end{figure}
+
 \subsection{Web Share (Target) \textsc{api} Support}
 
 Creating an advanced greeting cards app is nonsensical if there is no one out to appreciate the cards.
@@ -422,27 +431,10 @@ The other way round, through the Web Share Target \textsc{api},
 the greeting card application itself can become a~share target
 that one can share images to as card sources, for example, from the photo gallery app.
 
-\begin{figure}[hbt]
-  \includegraphics[width=0.3\columnwidth]{share.png}
+\begin{figure}[b]
+  \includegraphics[width=0.4\columnwidth]{share.png}
   \caption{Web Share \textsc{api}}
   \label{fig:share}
-\end{figure}
-
-\subsection{Native File System \textsc{api} Support}
-
-Drawing everything from scratch is hard.
-We thus add a~feature that allows the user to import a local image into the application.
-\autoref{fig:file} shows the file import dialog where, after granting access,
-the user can open a local image file and add it to their drawing.
-Later, they can also save their creation to disk.
-Both operations are enabled through the Native File System Access \textsc{api}~\cite{kruisselbrink19}
-and not to be confused with legacy workarounds that required uploading a local file to a server
-and downloading a~copy.
-
-\begin{figure}[hbt]
-  \includegraphics[width=0.5\columnwidth]{file.png}
-  \caption{Native File System Access \textsc{api}}
-  \label{fig:file}
 \end{figure}
 
 \subsection{Contact Access \textsc{api} Support}
