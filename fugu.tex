@@ -118,7 +118,7 @@ and service workers allow developers to create reliably fast web experiences
 almost regardless of network conditions.
 However, there are some capabilities, like file system access,
 raw clipboard access, background app refresh, and more,
-that are available to native platforms like Android or i\textsc{os},
+that are available to native platforms like Android or i\textsc{OS},
 but that are not available to the web platform.
 These missing capabilities mean some types of apps cannot be delivered on the web,
 or that these apps are less useful.
@@ -127,23 +127,24 @@ In colloquial terms, this is sometimes referred to as the \textit{app gap}.
 \subsection{Using Web Technologies, But Not the Web}
 
 To cope, some developers only build native apps---that is,
-do not build for the web in the first place---or
-use wrappers like Apache Cordova\footnote{Apache Cordova: \url{https://cordova.apache.org/}}
+do not build for the web in the first place.
+Alternatively, they use wrappers like Apache Cordova\footnote{Apache Cordova:
+\url{https://cordova.apache.org/}}
 on mobile or Electron\footnote{Electron: \url{https://electronjs.org/}} on desktop
 to access the underlying capabilities of the device,
 while still building \textit{with} the web technologies
 \textsc{html}, \textsc{css}, and \textsc{js}.
-This is not without risk from a~security point of view~\cite{carettoni17,luo11},
-and also suboptimal for users who, apart from the application code,
-on top need to download the wrapper code---for each application separately.
-We argue that instead web developers should have access
+This is not without risk from a~security point of view~\cite{carettoni17,luo11}.
+Users also pay more in download size and disk space,
+as runtimes must be distributed with application code in this model.
+We argue, instead, that web developers should have access
 to the capabilities they need to create great web experiences
 and we want to support them by collaborating in the \textit{Capabilities Project},
 code-named \textit{Project Fugu}.
 
 \subsection{The Capabilities Project, Or Project Fugu}
 
-In the context of the Capabilities Project, we want to enable web apps
+In the context of the Project Fugu, we want to enable web apps
 to do anything native apps can, by exposing the capabilities of native platforms
 to the web platform, while maintaining user security, privacy, trust,
 and other core tenets of the web.
@@ -158,7 +159,7 @@ using the existing open web platform standards processes
 while getting early feedback from developers and other browser vendors
 as we iterate on the design of these features to ensure its interoperability.
 
-The Capabilities Project is a~truly cross-company effort,
+Project Fugu is a~truly cross-company effort,
 with contributors from Google, Intel, and Microsoft.
 All monthly meeting notes are publicly accessible to anyone in the Chromium
 organization,\footnote{Project Fugu notes: \url{https://bit.ly/fugu-sync}}
@@ -183,12 +184,7 @@ page.\footnote{Project Fugu landing page:
 
 We have developed a process to make it possible to design and develop
 new web platform capabilities that meet the needs of developers quickly,
-in the open, and most importantly, work within the existing standards process.
-It is worth noting that many ideas never make it past an explainer or origin trial stage.
-\textit{Not} shipping a feature because it does not solve the developer need is fine.
-We want to highlight that this process does \textit{not} replace the Blink launch
-process;\footnote{Blink launch process: \url{https://www.chromium.org/blink/launching-features}}
-both go hand in hand together.
+in the open, and most importantly, without moving feature development outside the standards process.
 The capabilities process, depicted in \autoref{fig:fuguprocess}, consists of the following steps:
 
 \begin{enumerate}  
@@ -233,11 +229,16 @@ The capabilities process, depicted in \autoref{fig:fuguprocess}, consists of the
 \end{enumerate}
 
 \begin{figure}[hbt]
-  \includegraphics[width=\columnwidth]{capabilities-process.jpg}
+  \includegraphics[trim={0 0.5cm 0 0},clip,width=0.925\columnwidth]{capabilities-process.jpg}
   \caption{The Capabilities Process}
   \label{fig:fuguprocess}
 \end{figure}
 
+It is worth noting that many ideas never make it past an explainer or origin trial stage.
+\textit{Not} shipping a feature because it does not solve the developer need is fine.
+We want to highlight that this process does \textit{not} replace the Blink launch
+process;\footnote{Blink launch process: \url{https://www.chromium.org/blink/launching-features}}
+both go hand in hand.
 
 \subsection{Permissions}
 
@@ -296,7 +297,8 @@ to evaluating how powerful new features should be controlled on the web:
 
 This is not the first attempt at making the web a~powerful application platform.
 We list three examples that went to market with this promise.
-While there are more, these three are very representative.
+While there are more,\footnote{Others: Adobe \textsc{air}, Windows Hosted Apps,
+Blackberry WebWorks apps, \textsc{w3c} Widgets} these three are very representative.
 
 \subsection{Chrome Apps}
 
@@ -315,27 +317,27 @@ Chrome Apps could use a~set of proprietary \texttt{chrome.*}
 After three years, Chrome Apps were deprecated in August
 2016.\footnote{Chrome Apps deprecation:
 \url{http://bit.ly/chrome-apps-deprecation}}
-The Capabilities Project is a~direct successor to Chrome Apps.
+Project Fugu is a~direct successor to Chrome Apps.
 In fact, Progressive Web Apps built using Fugu \textsc{api}s
 are one of the recommended migration
 strategies.\footnote{Transitioning from Chrome Apps: \url{https://developers.chrome.com/apps/migration}}
 
-\subsection{Palm web\textsc{os}}
+\subsection{Palm web\textsc{OS}}
 
-Palm web\textsc{os}\footnote{Palm web\textsc{os} announcement:
+Palm web\textsc{OS}\footnote{Palm web\textsc{OS} announcement:
 \url{http://bit.ly/palm-webos-announcement}}
 was invented exclusively for mobile use.
 It recognized that users wanted their people, calendars, and information to move with them,
 wherever they were, wirelessly, as opposed to being bound to a personal computer.
-At its core, web\textsc{os} leverages industry-standard technologies,
+At its core, web\textsc{OS} leverages industry-standard technologies,
 including web technologies such as \textsc{css}, \textsc{xhtml}, and \textsc{js}.
 It changed owners several times and lives on as an open-source
-project\footnote{web\textsc{os} open-source project: \url{https://www.webosose.org/}}
+project\footnote{web\textsc{OS} open-source project: \url{https://www.webosose.org/}}
 powering smart devices, \textit{e.g.},\ \textsc{tv}s.
 
-\subsection{Firefox \textsc{os}}
+\subsection{Firefox \textsc{OS}}
 
-Firefox \textsc{os}, also known as
+Firefox \textsc{OS}, also known as
 Boot~2~Gecko\footnote{Boot to Gecko: \url{https://developer.mozilla.org/en-US/docs/Archive/B2G_OS}}
 and first commercially released in 2013,
 is a~discontinued open-source operating system
@@ -346,15 +348,15 @@ The operating system was capable of running web applications directly
 or those installed from an app marketplace.
 The applications used standards like \textsc{js} and \textsc{html}5,
 and web \textsc{api}s that could communicate directly with the underlying hardware.
-A~fork of Firefox \textsc{os} now gains traction under the name of
-Kai\textsc{os},\footnote{Kai\textsc{os}: \url{https://www.kaiostech.com/}}
+A~fork of Firefox \textsc{OS} now gains traction under the name of
+Kai\textsc{OS},\footnote{Kai\textsc{OS}: \url{https://www.kaiostech.com/}}
 especially on feature phones in emerging markets.
 
 \section{Demo Description}
 
 \subsection{Core Contributions and Intended Audience}
 
-Back in March 2003, Nick Finck and Steve Champeon stunned the web design world
+In March 2003, Nick Finck and Steve Champeon stunned the web design world
 with the concept of progressive enhancement~\cite{champeon03},
 a~strategy for web design that emphasizes core webpage content first,
 and that then progressively adds more nuanced and technically rigorous layers
@@ -363,7 +365,7 @@ While in 2003, progressive enhancement was about using at the time modern \texts
 unobtrusive JavaScript, and even Scalable Vector Graphics,
 progressive enhancement in 2020 is about using modern browser capabilities.
 
-With this demo, we will show at the example of a greeting card web application
+We will show at the example of a greeting card demo web application
 how new and upcoming browser capabilities can progressively enhance
 this application so that it remains useful on all modern browsers,
 but delivers an advanced experience on browsers that support capabilities
@@ -373,6 +375,26 @@ periodic background sync, screen wake lock, sharing features, and many more.
 The target audience are academia and industry web developers, browser engineers,
 and people involved in the \textsc{w3c} standards process,
 as well as web privacy researchers.
+
+\subsection{Demo Link and Demo Requirements}
+
+The demo is publicly available at \url{https://glitch.com/~fugu-greetings},
+where it can either be explored directly,
+or where its source code can be inspected and cloned.
+We recommend running the demo in the latest Chrome
+Canary\footnote{Chrome Canary: \url{https://www.google.com/chrome/canary/}}
+or Edge
+Canary\footnote{Edge Canary: \url{https://www.microsoftedgeinsider.com/en-us/download}}
+browsers (both at version 82 as of February 2020).
+Since this demo is about bleeding edge web \textsc{api}s,
+some browser runtime flags need to be set (below, replace \texttt{chrome://}
+with \texttt{edge://} on Edge):
+
+\begin{itemize}
+  \item \url{chrome://flags/#native-file-system-api}
+  \item \url{chrome://flags/#enable-experimental-web-platform-features}  
+  \item \url{chrome://flags/#periodic-background-sync}
+\end{itemize}
 
 \subsection{Baseline Application}
 
@@ -461,10 +483,9 @@ the Periodic Background Sync  \textsc{api} to surprise the user
 with a~new greeting card template each day,
 the Idle Detection \textsc{api} to clear the greeting card
 when the user is no longer interacting with the application
-(for example, when it is running in a~public kiosk setup),
-and ultimately the File Handling \textsc{api}, which allows the greeting card app
-to register as a~file handler so image files can be opened 
-with the app directly via the operating system's file explorer.
+(for example, when it is running in a~kiosk setup),
+and the File Handling \textsc{api}, which allows the app
+to register as a~file handler to integrate with the operating system's file explorer.
 
 \section{Conclusions}
 
@@ -475,28 +496,6 @@ and invite interested parties to learn more about Project Fugu.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{fugu}
-
-\appendix
-
-\section{Demo Requirements}
-
-The demo is publicly available at \url{https://glitch.com/~fugu-greetings},
-where it can either be explored directly,
-or where its source code can be inspected and cloned.
-We recommend running the demo in the latest Chrome
-Canary\footnote{Chrome Canary: \url{https://www.google.com/chrome/canary/}}
-or Edge
-Canary\footnote{Edge Canary: \url{https://www.microsoftedgeinsider.com/en-us/download}}
-browsers.
-Since this demo is about bleeding edge web \textsc{api}s,
-some browser runtime flags need to be set (below, replace \texttt{chrome://}
-with \texttt{edge://} on Edge):
-
-\begin{itemize}
-  \item \url{chrome://flags/#native-file-system-api}
-  \item \url{chrome://flags/#enable-experimental-web-platform-features}  
-  \item \url{chrome://flags/#periodic-background-sync}
-\end{itemize}
 
 \end{document}
 \endinput
