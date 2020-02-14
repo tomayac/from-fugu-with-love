@@ -74,7 +74,7 @@
 \renewcommand{\shortauthors}{Thomas Steiner, Pete LePage, Thomas Nattestad, \textit{et al.}}
 
 \begin{abstract}
-We present a greeting card web application that is useful in all modern browsers,
+We present a~greeting card web application that is useful in all modern browsers,
 but sees its experience progressively enhanced through new and upcoming browser capabilities
 such as native file system access, system clipboard access, contacts retrieval,
 periodic background sync, screen wake lock, web sharing features, and more.
@@ -107,7 +107,7 @@ periodic background sync, screen wake lock, web sharing features, and more.
 \subsection{The App Gap}
 
 Modern web browsers support impressive web applications far beyond
-the web's origin as a global space of linked documents.
+the web's origin as a~global space of linked documents.
 WebAssembly (Wasm) is enabling new classes of games and productivity apps,
 Web Real-Time Communication (Web\textsc{rtc}) enables new ways to communicate,
 and service workers allow developers to create reliably fast web experiences
@@ -142,7 +142,7 @@ We want to enable the web to access native app capabilities
 \textit{without} having to compromise user security, privacy, or trust,
 or having to package entire app runtimes.
 Giving developers these new tools will empower the open web
-as a place where almost any experience can be created,
+as a~place where almost any experience can be created,
 and make it a~first class platform for developing apps that run on any browser,
 with any operating system, and on any device.
 We design and develop these new capabilities in an open and transparent way
@@ -153,7 +153,7 @@ while getting early feedback from developers and other browser vendors
 as we iterate on the design of these features to ensure its interoperability.
 
 This work is a~cross-company effort, with contributors from Google, Microsoft, and Intel.
-The monthly meetings are open to join upon invitation
+The monthly meetings are open to active contributors
 and have shared notes,\footnote{Project Fugu notes:
 \url{https://bit.ly/fugu-sync}}
 accessible to anyone in the Chromium organization.
@@ -164,7 +164,7 @@ between web and native.
 People interested in the list can review it by searching the Chromium bug database
 for bugs that are tagged with the label
 \texttt{proj-fugu}.\footnote{Project Fugu bugs: \url{https://bit.ly/fugu-bugs}}
-Regarding the project's code name: fugu is a pufferfish that is considered a delicacy, however,  
+Regarding the project's code name: fugu is a~pufferfish that is considered a~delicacy, however,  
 if not carefully prepared, it can be lethally poisonous. 
 This analogy works quite well with many of the capabilities we deal with.
 We have outlined our vision for a~more capable web in a~blog post~\cite{lepage18}
@@ -175,10 +175,10 @@ page.\footnote{Project Fugu landing page:
 
 \subsection{The Capabilities Process}
 
-We have developed a process to make it possible to design and develop
-new web platform capabilities that meet the needs of developers quickly,
-in the open, and most importantly, without moving feature development outside the standards process.
-The capabilities process, depicted in \autoref{fig:fuguprocess}, consists of the following steps:
+We have developed a~process, depicted in \autoref{fig:fuguprocess},
+to make it possible to design and develop new web platform capabilities
+that meet the needs of developers quickly, in the open, and most importantly,
+without moving feature development outside the standards process.
 
 \begin{enumerate}
   \item \textbf{Identify the developer need:}
@@ -190,42 +190,45 @@ The capabilities process, depicted in \autoref{fig:fuguprocess}, consists of the
 
   \item \textbf{Create an explainer:}
 
-  After identifying the need for a new capability, create an explainer,
+  After identifying the need for a~new capability, create an explainer,
   essentially a~design document that is meant to explain the problem,
   along with sample code showing how the \textsc{api} might work.
-  The explainer is a living document that will go through heavy iteration
+  The explainer is a~living document that will go through heavy iteration
   as the new capability evolves.
 
   \item \textbf{Get feedback and iterate on the explainer:}
 
-  Once the explainer has a reasonable level of clarity,
+  Once the explainer has a~reasonable level of clarity,
   it is time to publicize it, to solicit feedback, and iterate on the design.
   This is an opportunity to verify the new capability meets the needs of developers
   and works as expected and to gather public support and verify
-  that there really is a need for this.
+  that there really is a~need for this.
 
-  \item \textbf{Move the design to a specification and iterate:}
+  \item \textbf{Move the design to a~specification and iterate:}
   
-  Once the explainer is in a good state,
-  the design work transitions into a formal specification,
+  Once the explainer is in a~good state,
+  the design work transitions into a~formal specification,
   working with developers and other browser vendors to iterate and improve on the design.
-  Once the design starts to stabilize, we typically use an
+  Once the design starts to stabilize, we use an
   origin trial\footnote{Origin Trial: \url{http://googlechrome.github.io/OriginTrials/explainer.html}}
-  to experiment with the implementation.
+  to begin prototyping and to experiment with the implementation.
   Origin trials allow developers to try new features with real users,
   and give feedback on the implementation.
 
   \item \textbf{Ship it:}
 
-  Finally, once the origin trial is complete, the spec has been finalized,
-  and all of the other launch steps have been completed, it is time to ship it to stable.  
+  Finally, once the origin trial is complete, the spec is mature,
+  and all of the other launch steps have been completed, it is time to ship it to stable.
+  We still iterate with other implementations and developers
+  to refine the spec, explore improvements and fixes to the design with other vendors,
+  and work toward promoting the spec to a~formal standard.
 \end{enumerate}
 
-It is worth noting that many ideas never make it past an explainer or origin trial stage.
-\textit{Not} shipping a feature because it does not solve the developer need is fine.
-We want to highlight that this process does \textit{not} replace the Blink launch
-process;\footnote{Blink launch process: \url{https://www.chromium.org/blink/launching-features}}
-both go hand in hand.
+\textit{Nota bene}, many ideas never make it past an explainer or origin trial stage.
+\textit{Not} shipping a~feature because it does not solve the developer need is fine.
+Key milestones here are formalized with public discussion and approvals
+via Chromium's \textsc{api} launch process.\footnote{Chromium (Blink) launch process:
+\url{https://goo.gle/blink-launch-process}}
 
 \begin{figure}[htb]
   \includegraphics[trim={0 0.5cm 0 0},clip,width=0.925\columnwidth]{capabilities-process.jpg}
@@ -251,10 +254,10 @@ We propose the following steps:
     a~developer's intent to use them, permissions requests should be centralized
     on a~single method~\cite{yasskin17} to enable
     better user controls and bring much needed developer consistency.
-  \item The Permissions \textsc{api}~\cite{lamouri19} should be extended with a revoke method,
+  \item The Permissions \textsc{api}~\cite{lamouri19} should be extended with a~revoke method,
     so developers are able to ensure their applications operate with least-privilege.
   \item The Web Application Manifest should be extended to include fields
-    which allow sites to identify to the runtime a maximum set of permissions.
+    which allow sites to identify to the runtime a~maximum set of permissions.
     Requests for permissions not included in this list should fail.
 \end{itemize}
 
@@ -273,16 +276,16 @@ to evaluating how powerful new features should be controlled on the web:
   \item \textsc{api}-specific restrictions on the scope of access may also be used
     to guard against potential abuse.
   \item Usage of powerful \textsc{api}s should be clearly disclosed to users,
-    ideally using a central hub that offers users control over what sites
+    ideally using a~central hub that offers users control over what sites
     can use which capabilities.
   \item Installing a~web app is associated with persistence,
     and thus persistent and/or background access to powerful \textsc{api}s
     may only be granted (possibly subject to additional requirements) to installed web apps.
     Non-installed sites may still request and be granted permission to use powerful \textsc{api}s,
     but should not have their access persisted.
-  \item Installation or engagement alone should not act as a vote of trust
+  \item Installation or engagement alone should not act as a~vote of trust
     for either granting access or enabling the ability to ask for access to powerful \textsc{api}s.
-    Separately, efforts should be made to curtail the existing persistency
+   \item Separately, efforts should be made to curtail the existing persistency
     on the web platform outside of installed web apps, \textit{e.g.},\ time-limiting permission grants,
     more aggressively expiring cookies, and restricting background task execution.
 \end{itemize}
@@ -292,46 +295,45 @@ to evaluating how powerful new features should be controlled on the web:
 This is not the first attempt at making the web a~powerful application platform.
 We list three examples that went to market with this promise.
 While there are more,\footnote{Others: Adobe \textsc{air}, Windows Hosted Apps,
-Blackberry WebWorks apps, \textsc{w3c} Widgets} these three are very representative.
+Blackberry WebWorks apps, \textsc{w3c} Widgets} these four are very representative.
+
+\subsection{Palm web\textsc{OS}}
+
+Palm web\textsc{OS},\footnote{Palm web\textsc{OS} announcement:
+\url{http://bit.ly/palm-webos-announcement}}
+announced in 2009, was exclusively for mobile.
+It recognized that users wanted their people, calendars, and information to move with them,
+wherever they were, wirelessly, as opposed to being bound to a~personal computer.
+At its core, web\textsc{OS} leverages industry-standard technologies,
+including web technologies such as \textsc{css}, \textsc{xhtml}, and \textsc{js}.
+It changed owners several times and lives on as an open-source
+project\footnote{web\textsc{OS} open-source project: \url{https://www.webosose.org/}}
+now powering smart devices, \textit{e.g.},\ \textsc{tv}s.
 
 \subsection{Chrome Apps}
 
 In 2013, Chrome Apps~\cite{kay13} promised to bring together the speed, security,
 and flexibility of the modern web with the powerful functionality
-previously only available with software installed on devices. 
-Chrome Apps were designed to work offline, were capable of running in stand-alone windows,
-could be launched directly from the desktop,
-supported desktop notifications,
-and could interact with \textsc{usb}, Bluetooth and other devices connected to a~desktop,
-including digital cameras.
+previously only available with native software. 
+Chrome Apps were designed to work offline, could run in stand-alone windows,
+were launchable directly from the desktop,
+supported notifications, and could interact with \textsc{usb}, Bluetooth and other devices.
 They were kept updated automatically and synced their state to the cloud.
 Chrome Apps could use a~set of proprietary \texttt{chrome.*}
 \textsc{api}s.\footnote{\texttt{chrome.*}
 \textsc{api}s: \url{https://developer.chrome.com/apps/api_index}}
-After three years, Chrome Apps were deprecated in August
-2016.\footnote{Chrome Apps deprecation:
+Chrome Apps were deprecated in August
+2016\footnote{Chrome Apps deprecation:
 \url{http://bit.ly/chrome-apps-deprecation}}
+and support for Chrome Apps in Chrome will end by
+June 2022.\footnote{Chrome Apps end of support:
+\url{https://goo.gle/chrome-apps-support-end}}
 Project Fugu is a~direct successor to Chrome Apps.
-In fact, Progressive Web Apps built using Fugu \textsc{api}s
+Progressive Web Apps built using Fugu \textsc{api}s
 are one of the recommended migration
 strategies.\footnote{Transitioning from Chrome Apps: \url{https://developers.chrome.com/apps/migration}}
-Support for Chrome Apps in Chrome will end by June 2022.\footnote{Chrome Apps end of support:
-\url{https://goo.gle/chrome-apps-support-end}}
 
-\subsection{Palm web\textsc{OS}}
-
-Palm web\textsc{OS}\footnote{Palm web\textsc{OS} announcement:
-\url{http://bit.ly/palm-webos-announcement}}
-was invented exclusively for mobile use.
-It recognized that users wanted their people, calendars, and information to move with them,
-wherever they were, wirelessly, as opposed to being bound to a personal computer.
-At its core, web\textsc{OS} leverages industry-standard technologies,
-including web technologies such as \textsc{css}, \textsc{xhtml}, and \textsc{js}.
-It changed owners several times and lives on as an open-source
-project\footnote{web\textsc{OS} open-source project: \url{https://www.webosose.org/}}
-powering smart devices, \textit{e.g.},\ \textsc{tv}s.
-
-\subsection{Firefox \textsc{OS}}
+\subsection{Firefox \textsc{os}}
 
 Firefox \textsc{OS}, also known as
 Boot~2~Gecko\footnote{Boot to Gecko: \url{https://developer.mozilla.org/en-US/docs/Archive/B2G_OS}}
@@ -340,30 +342,40 @@ is a~discontinued open-source operating system
 designed by Mozilla and external contributors.
 It was based on the rendering engine of the Firefox web browser, Gecko,
 and on the Linux kernel.
-The operating system was capable of running web applications directly
-or those installed from an app marketplace.
 The applications used standards like \textsc{js} and \textsc{html}5,
 and web \textsc{api}s that could communicate directly with the underlying hardware.
 A~fork of Firefox \textsc{OS} now gains traction under the name of
 Kai\textsc{OS},\footnote{Kai\textsc{OS}: \url{https://www.kaiostech.com/}}
-especially on feature phones in emerging markets.
+especially in emerging markets.
+
+\subsection{Super Apps Like WeChat}
+
+WeChat is a~Chinese multi-purpose messaging, social media and mobile payment app
+developed by Tencent. 
+In 2017, WeChat launched a~feature called
+\textit{Mini Programs}.\footnote{WeChat Mini apps:
+\url{https://goo.gle/wechat-miniapps}}
+Developers can create mini apps in the WeChat system,
+implemented using \textsc{js} and a~proprietary \textsc{api}
+that grants access to device capabilities like \textsc{qr} code reading, the file system,
+Bluetooth communication, system clipboard, \textit{etc.}
+Other super app platforms exist, and there is ongoing standardization effort
+happening in the \textsc{w3c} MiniApps Ecosystem Community
+Group.\footnote{MiniApps Ecosystem \textsc{cg}: \url{https://www.w3.org/community/miniapps/}}
 
 \section{Demo Description}
 
 \subsection{Core Contributions and Intended Audience}
 
 In March 2003, Nick Finck and Steve Champeon stunned the web design world
-with the concept of progressive enhancement~\cite{champeon03},
+with the concept of progressive enhancement,
 a~strategy for web design that emphasizes core webpage content first,
 and that then progressively adds more nuanced and technically rigorous layers
 of presentation and features on top of the content.
 While in 2003, progressive enhancement was about using at the time modern \textsc{css} features,
-unobtrusive JavaScript, progressive enhancement in 2020 is about using modern browser capabilities.
-
+unobtrusive JavaScript; progressive enhancement in 2020 is about using modern browser capabilities.
 We will present a~greeting card web application that is useful in all modern browsers,
-but sees its experience progressively enhanced through new and upcoming browser capabilities
-such as native file system access, system clipboard access, contacts retrieval,
-periodic background sync, screen wake lock, web sharing features, and more.
+but sees its experience progressively enhanced through new and upcoming browser capabilities.
 
 The target audience are academia and industry web developers, browser engineers,
 and people involved in the \textsc{w3c} standards process,
@@ -391,33 +403,16 @@ with \texttt{edge://} on Edge):
 
 \subsection{Baseline Application}
 
-Progressive Web Applications (\textsc{pwa}s) are a type of application software
+Progressive Web Applications (\textsc{pwa}s) are a~type of application software
 delivered through the web, built using common web technologies
 including \textsc{html}, \textsc{css}, and \textsc{js}.
-They are intended to work on any platform that uses a standards-compliant browser.
-As such, we will start with a simple drawing web application
+They are intended to work on any platform that uses a~standards-compliant browser.
+As such, we will start with a~simple drawing web application
 that serves as the baseline greeting card app that is offline-enabled,
 can be added to the user's home screen, \textit{etc.},
 and step-by-step add new browser capabilities
 as progressive enhancements that are dynamically offered on supporting browsers.
 We note that the currently rudimentary visual design of this application is \textit{not} focus of the demo.
-
-\subsection{Native File System \textsc{api} Support}
-
-Drawing everything from scratch is hard.
-We thus add a~feature that allows the user to import a local image into the application.
-\autoref{fig:file} shows the file import dialog where, after granting access,
-the user can open a local image file and add it to their drawing.
-Later, they can also save their creation to disk.
-Both operations are enabled through the Native File System Access \textsc{api}~\cite{kruisselbrink19}
-and not to be confused with legacy workarounds that required uploading a local file to a server
-and downloading a~copy.
-
-\begin{figure}[b]
-  \includegraphics[width=0.75\columnwidth]{file.png}
-  \caption{Native File System Access \textsc{api}}
-  \label{fig:file}
-\end{figure}
 
 \subsection{Web Share (Target) \textsc{api} Support}
 
@@ -425,7 +420,7 @@ Creating an advanced greeting cards app is nonsensical if there is no one out to
 We thus add a~feature that allows the user to share their drawings with the world.
 The Web Share \textsc{api}~\cite{giuca2017webshare} allows for the sharing of files
 using the native device's share mechanism.
-\autoref{fig:share} shows the user initiating a~share of a drawing on an Android device.
+\autoref{fig:share} shows the user initiating a~share of a~drawing on an Android device.
 Both the native Google Hangouts app as well as the native Facebook app offer itself
 as share targets.
 The other way round, through the Web Share Target \textsc{api},
@@ -433,9 +428,26 @@ the greeting card application itself can become a~share target
 that one can share images to as card sources, for example, from the photo gallery app.
 
 \begin{figure}[b]
-  \includegraphics[width=0.4\columnwidth]{share.png}
+  \includegraphics[width=0.25\columnwidth]{share.png}
   \caption{Web Share \textsc{api}}
   \label{fig:share}
+\end{figure}
+
+\subsection{Native File System \textsc{api} Support}
+
+Drawing everything from scratch is hard.
+We thus add a~feature that allows the user to import a~local image into the application.
+\autoref{fig:file} shows the file import dialog where, after granting access,
+the user can open a~local image file and add it to their drawing.
+Later, they can also save their creation to disk.
+Both operations are enabled through the Native File System Access \textsc{api}~\cite{kruisselbrink19}
+and not to be confused with legacy workarounds that required uploading a~local file to a~server
+and downloading a~copy.
+
+\begin{figure}[b]
+  \includegraphics[width=0.5\columnwidth]{file.png}
+  \caption{Native File System Access \textsc{api}}
+  \label{fig:file}
 \end{figure}
 
 \subsection{Contact Access \textsc{api} Support}
@@ -452,7 +464,7 @@ and the user can choose the contact details.
 \subsection{Clipboard \textsc{api} Support}
 
 Occasionally users might want to paste a~picture from another app into the greeting card app,
-or copy a drawing from the greeting card app into another app.
+or copy a~drawing from the greeting card app into another app.
 We add a~feature that allows users to copy and paste images from and to the app.
 The Clipboard \textsc{api}~\cite{kacmarcik19} allows for the asynchronous copying and pasting
 of image data (currently limited to Portable Network Graphics images).
@@ -468,7 +480,7 @@ that increments with each stroke.
 
 \subsection{Other \textsc{api}s Support}
 
-The demo will showcase a number of other \textsc{api}s, namely the
+The demo will showcase a~number of other \textsc{api}s, namely the
 Shape Detection \textsc{api} to detect shapes like faces,
 the Wake Lock  \textsc{api} to keep the screen awake
 while the user waits for drawing inspiration, 
